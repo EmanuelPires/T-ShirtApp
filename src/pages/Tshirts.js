@@ -4,7 +4,8 @@ import Jumbo from '../components/Jumbo/index';
 
 class Tshirts extends React.Component {
   state = {
-    namearray: []
+    namearray: [],
+    image: []
   };
 
   componentDidMount() {
@@ -86,9 +87,6 @@ class Tshirts extends React.Component {
       let word = this.state.namearray;
 
       for (var i = 1; i < word.length; i++) {
-        var letter1 = word[i - 1];
-        var letter2 = word[i];
-
         var c = document.getElementById('canvas');
         var ctx = c.getContext('2d');
         ctx.beginPath();
@@ -176,11 +174,6 @@ class Tshirts extends React.Component {
       let word = this.state.namearray;
 
       for (var i = 1; i < word.length; i++) {
-        var letter1 = word[i - 1];
-        var letter2 = word[i];
-
-        var c = document.getElementById('canvas');
-        var ctx = c.getContext('2d');
         ctx.beginPath();
         ctx.moveTo(coordKey[word[i - 1]][0], coordKey[word[i - 1]][1]);
         // debugger;
@@ -201,6 +194,17 @@ class Tshirts extends React.Component {
       ctx.drawImage(imageObj1, 0, 0);
     };
   }
+
+  nextPage = e => {
+    e.preventDefault();
+    console.log('The link was clicked.');
+    var canvas = document.getElementById('canvas');
+    var canvasImage = canvas.toDataURL('image/png');
+
+    this.setState({ image: canvasImage }, function() {
+      console.log(this.state.image);
+    });
+  };
 
   //End of Functions
 
@@ -229,6 +233,7 @@ class Tshirts extends React.Component {
                   onKeyDown={this.deleteLetter}
                   id='nameInput'
                 />
+                <button onClick={this.nextPage}>Submit!</button>
               </form>
             </div>
           </div>
