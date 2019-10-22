@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import Jumbo from '../components/Jumbo/index';
 
 class Tshirts extends React.Component {
@@ -233,7 +233,10 @@ class Tshirts extends React.Component {
                   onKeyDown={this.deleteLetter}
                   id='nameInput'
                 />
-                <button onClick={this.nextPage}>Submit!</button>
+
+                <button onClick={this.nextPage}>
+                  <Link to='/checkout'>Submit</Link>
+                </button>
               </form>
             </div>
           </div>
