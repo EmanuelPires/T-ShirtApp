@@ -2,7 +2,6 @@ import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import maxresdefault from '../Assets/maxresdefault.jpg';
 
 import { Link } from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
@@ -11,7 +10,6 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import Splash from '../components/Splash/Splash';
 
 function Copyright() {
   return (
@@ -54,15 +52,13 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function Landing() {
+export default function Materialshirt() {
   const classes = useStyles();
 
   return (
     <Grid container component='main' className={classes.root}>
       <CssBaseline />
-      <Grid item xs={false} sm={4} md={7}>
-        <Splash />
-      </Grid>
+      <Grid item xs={false} sm={4} md={7}></Grid>
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
