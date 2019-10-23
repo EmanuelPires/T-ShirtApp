@@ -2,7 +2,7 @@ import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
-
+import TextField from '@material-ui/core/TextField';
 import { Link } from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
@@ -16,7 +16,7 @@ function Copyright() {
     <Typography variant='body2' color='textSecondary' align='center'>
       {'Copyright © '}
       <Link color='inherit' href='https://material-ui.com/'>
-        Your Website
+        Emanuel, Rachit and Mike's
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -47,6 +47,10 @@ const useStyles = makeStyles(theme => ({
     width: '100%', // Fix IE 11 issue.
     marginTop: theme.spacing(1)
   },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(0)
+  },
   submit: {
     margin: theme.spacing(3, 0, 2)
   }
@@ -58,7 +62,17 @@ export default function Materialshirt() {
   return (
     <Grid container component='main' className={classes.root}>
       <CssBaseline />
-      <Grid item xs={false} sm={4} md={7}></Grid>
+      <Grid
+        container
+        xs={false}
+        sm={4}
+        md={7}
+        justify='center'
+        alignItems='center'
+        backgroundColor='black'
+      >
+        <canvas className={'border'} id={'canvas'} width={725} height={250} />
+      </Grid>
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
@@ -68,21 +82,18 @@ export default function Materialshirt() {
             Names and Angles
           </Typography>
           <form className={classes.form} noValidate>
-            <Link to='/tshirt'>
-              <Button
-                type='null'
-                fullWidth
-                variant='contained'
-                color='primary'
-                className={classes.submit}
-              >
-                Get Started!
-              </Button>
-            </Link>
-
-            <Box mt={5}>
-              <Copyright />
-            </Box>
+            <TextField
+              id='outlined-full-width'
+              style={{ margin: 8 }}
+              placeholder='Placeholder'
+              helperText='Write your name! Or whatever you want!'
+              fullWidth
+              margin='normal'
+              variant='outlined'
+              InputLabelProps={{
+                shrink: true
+              }}
+            />
           </form>
         </div>
       </Grid>
