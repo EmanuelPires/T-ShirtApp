@@ -56,7 +56,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function Materialshirt() {
+export default function Materialshirt(props) {
   const classes = useStyles();
 
   return (
@@ -69,7 +69,6 @@ export default function Materialshirt() {
         md={7}
         justify='center'
         alignItems='center'
-        backgroundColor='black'
       >
         <canvas className={'border'} id={'canvas'} width={725} height={250} />
       </Grid>
@@ -83,9 +82,10 @@ export default function Materialshirt() {
           </Typography>
           <form className={classes.form} noValidate>
             <TextField
+              onChange={props.onChangeValue}
+              value={props.value}
               id='outlined-full-width'
               style={{ margin: 8 }}
-              placeholder='Placeholder'
               helperText='Write your name! Or whatever you want!'
               fullWidth
               margin='normal'
