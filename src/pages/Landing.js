@@ -42,8 +42,7 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'center'
   },
   avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main
+    margin: theme.spacing(1)
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -66,7 +65,7 @@ export default function Landing() {
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
+            <LockOutlinedIcon color={'secondary'} />
           </Avatar>
           <Typography component='h1' variant='h5'>
             Names and Angles

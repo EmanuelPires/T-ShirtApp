@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Jumbo from '../components/Jumbo/index';
+import Avatar from '@material-ui/core/Avatar';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper';
 
 class Tshirts extends React.Component {
   state = {
@@ -211,10 +215,14 @@ class Tshirts extends React.Component {
   render() {
     return (
       <div>
-        <Jumbo />
         <div className={'container-fluid'}>
-          <div className={'row'}>
-            <div className={'col-md d-flex justify-content-center'}>
+          <div className={'row align-items-center'}>
+            <div
+              className={
+                'col-7 d-flex justify-content-center align-items-center shadow-lg p-3  bg-white rounded'
+              }
+              id={'canvasID'}
+            >
               <canvas
                 ref='canvas'
                 className={'border'}
@@ -223,21 +231,46 @@ class Tshirts extends React.Component {
                 height={250}
               />
             </div>
-            <div className={'col-md'}>
-              <h1>Enter Your Name:</h1>
-
-              <form>
-                <input
-                  className={'form-control form-control-lg'}
-                  onKeyPress={this.handleChange}
-                  onKeyDown={this.deleteLetter}
-                  id='nameInput'
-                />
-
-                <button onClick={this.nextPage}>
-                  <Link to='/checkout'>Submit</Link>
-                </button>
-              </form>
+            <div className={'col-5'} id={'rightSide'}>
+              <div
+                className={'d-flex justify-content-center'}
+                id={'avatarLogo'}
+              >
+                <Avatar>
+                  <LockOutlinedIcon color={'secondary'} />
+                </Avatar>
+              </div>
+              <div className={'d-flex justify-content-center'} id={'titleSec'}>
+                <Typography component='h1' variant='h5'>
+                  Names and Angles
+                </Typography>
+              </div>
+              <div id={'nameInput'}>
+                <form>
+                  <input
+                    className={'form-control form-control-lg'}
+                    onKeyPress={this.handleChange}
+                    onKeyDown={this.deleteLetter}
+                  />
+                </form>
+              </div>
+              <Link
+                to={{
+                  pathname: '/checkout',
+                  state: { canvasImage: this.state.image }
+                }}
+                onClick={this.nextPage}
+              >
+                <Button
+                  type='button'
+                  fullWidth
+                  variant='contained'
+                  color='primary'
+                  id={'checkOut'}
+                >
+                  CHECKOUT!
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

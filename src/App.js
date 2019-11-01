@@ -12,7 +12,7 @@ function App() {
     <Router>
       <div>
         <Route exact path='/' component={Landing} />
-        <Route exact path='/tshirt' component={TLanding} />
+        <Route exact path='/tshirt' component={Tshirt} />
         <Route exact path='/checkout' component={CheckOut} />
       </div>
     </Router>
