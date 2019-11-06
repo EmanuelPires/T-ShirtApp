@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-.row {
+.mainPage {
   height: 600px;
 }
 
@@ -42,4 +42,17 @@ canvas {
 #checkOut {
   position: relative;
   bottom: 250px;
+}
+
+#backGroundImage {
+  background-image: url('./Assets/tshirt.png');
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.tshirtRow {
+  height: 1200px !important;
 }

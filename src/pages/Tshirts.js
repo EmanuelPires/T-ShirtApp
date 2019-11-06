@@ -99,6 +99,7 @@ class Tshirts extends React.Component {
         ctx.lineTo(coordKey[word[i]][0], coordKey[word[i]][1]);
         ctx.stroke();
       }
+      this.setImage();
     } else {
       console.log('less than 2');
       var newStateArray = this.state.namearray.slice();
@@ -199,11 +200,12 @@ class Tshirts extends React.Component {
     };
   }
 
-  nextPage = e => {
-    e.preventDefault();
+  setImage = e => {
     console.log('The link was clicked.');
     var canvas = document.getElementById('canvas');
     var canvasImage = canvas.toDataURL('image/png');
+
+    console.log(canvasImage);
 
     this.setState({ image: canvasImage }, function() {
       console.log(this.state.image);
@@ -216,7 +218,7 @@ class Tshirts extends React.Component {
     return (
       <div>
         <div className={'container-fluid'}>
-          <div className={'row align-items-center'}>
+          <div className={'row align-items-center mainPage'}>
             <div
               className={
                 'col-7 d-flex justify-content-center align-items-center shadow-lg p-3  bg-white rounded'
@@ -259,7 +261,6 @@ class Tshirts extends React.Component {
                   pathname: '/checkout',
                   state: { canvasImage: this.state.image }
                 }}
-                onClick={this.nextPage}
               >
                 <Button
                   type='button'

@@ -17,9 +17,10 @@ function Copyright() {
   return (
     <Typography variant='body2' color='textSecondary' align='center'>
       {'Copyright © '}
-      <Link color='inherit' href='/'>
+      <Link color='inherit' to='/'>
         Emanuel, Mike and Rachit's App
-      </Link>{' '}
+      </Link>
+      {'/tshirt '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
@@ -73,7 +74,7 @@ export default function Landing() {
           <form className={classes.form} noValidate>
             <Link to='/tshirt'>
               <Button
-                type='null'
+                type='button'
                 fullWidth
                 variant='contained'
                 color='primary'
