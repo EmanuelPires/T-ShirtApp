@@ -244,7 +244,7 @@ class Tshirts extends React.Component {
               </div>
               <div className={'d-flex justify-content-center'} id={'titleSec'}>
                 <Typography component='h1' variant='h5'>
-                  Names and Angles
+                  NAMERUNNER
                 </Typography>
               </div>
               <div id={'nameInput'}>

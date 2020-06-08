@@ -2,7 +2,6 @@ import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import maxresdefault from '../Assets/maxresdefault.jpg';
 
 import { Link } from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
@@ -69,7 +68,7 @@ export default function Landing() {
             <LockOutlinedIcon color={'secondary'} />
           </Avatar>
           <Typography component='h1' variant='h5'>
-            Names and Angles
+            NAMERUNNER
           </Typography>
           <form className={classes.form} noValidate>
             <Link to='/tshirt'>
